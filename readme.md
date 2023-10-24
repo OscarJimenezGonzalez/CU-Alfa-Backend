@@ -1,4 +1,3 @@
-```
 
 ### User Signup/Login
 
@@ -77,4 +76,4 @@ PUT    | /SupplierContractType/:SupplierContractTypeId | YES   | admin | Update 
 DELETE | /SupplierContractType/:SupplierContractTypeId | YES   | admin | Delete one SupplierContractType    |                                                 |  {message: 'SupplierContractType deleted'}
 
 
-```
+
