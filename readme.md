@@ -60,7 +60,7 @@ GET    | /supplierOffer                      | YES   | admin | Get all supplierO
 GET    | /supplierOffer/:supplierOfferId     | YES   | admin | Get one supplierOffer              |                                                  |  {supplierOffer}
 POST   | /supplierOffer/own                  | YES   | user  | Create one supplierOffer           | `body`                                           |  {supplierOffer}
 POST   | /supplierOffer                      | YES   | admin | Create one supplierOffer           | `body`                                           |  {supplierOffer}
-PUT    | /supplierOffer/own/:supplierOfferId | YES   | user  | Update on of my own supplierOffer  | `body`                                        |  {message: 'Own Supplier Offer updated'}
+PUT    | /supplierOffer/own/:supplierOfferId | YES   | user  | Update one of my own supplierOffers| `body`                                        |  {message: 'Own Supplier Offer updated'}
 PUT    | /supplierOffer/:supplierOfferId     | YES   | admin | Update one supplierOffer           | `body`                                           |  {message: 'Supplier Offer updated'}
 DELETE | /supplierOffer/own/:supplierOfferId | YES   | user  | Delete one of my own supplierOffers|                                              |  {message: 'Supplier Offer deleted'}
 DELETE | /supplierOffer/:supplierOfferId     | YES   | admin | Delete one supplierOffer           |                                                   |  {message: 'Supplier Offer deleted'}
@@ -69,11 +69,11 @@ DELETE | /supplierOffer/:supplierOfferId     | YES   | admin | Delete one suppli
 
 METHOD | ENDPOINT                            | TOKEN | ROLE | DESCRIPTION          | POST PARAMS                                             | RETURNS
 -------|-------------------------------------|-------|------|----------------------|---------------------------------------------------------|--------------------
-GET    | /SupplierContractType                         | YES   | admin | Get all SupplierContractType       |                                                     |  [{SupplierContractType}]
-GET    | /SupplierContractType/:SupplierContractTypeId | YES   | admin | Get one SupplierContractType       |                                                 |  {SupplierContractType}
-POST   | /SupplierContractType                         | YES   | admin | Create one SupplierContractType    | `body`                                          |  {SupplierContractType}
-PUT    | /SupplierContractType/:SupplierContractTypeId | YES   | admin | Update one SupplierContractType    | `body`                                          |  {message: 'SupplierContractType updated'}
-DELETE | /SupplierContractType/:SupplierContractTypeId | YES   | admin | Delete one SupplierContractType    |                                                 |  {message: 'SupplierContractType deleted'}
+GET    | /supplierContractType                         | YES   | admin | Get all supplierContractType       |                                                     |  [{supplierContractType}]
+GET    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Get one supplierContractType       |                                                 |  {supplierContractType}
+POST   | /supplierContractType                         | YES   | admin | Create one supplierContractType    | `body`                                          |  {supplierContractType}
+PUT    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Update one supplierContractType    | `body`                                          |  {message: 'SupplierContractType updated'}
+DELETE | /supplierContractType/:SupplierContractTypeId | YES   | admin | Delete one supplierContractType    |                                                 |  {message: 'SupplierContractType deleted'}
 
 
 
