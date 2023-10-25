@@ -7,8 +7,8 @@ Cada comunidad que se registra en nuestra web, tiene contratos para los 5 servio
     1. de registrar el pvp de sus contratos y las características de su comunidad para que otras empresas puedan acceder a la info y licitar por sus servicios.
     Así las comunidades conseguirían una mayor cantidad de ofertas sobre las que elegir.
     2. (si eres usuario free) ver en que ranking de precios se encuentran los contratos de tu comunidad en el mercado (o al menos para las empresas registradas en la api) 
-    3. (si eres premium) contactar por medio de la plataforma a las empresas con ofertas mas ventajosas para los distintos contratos y además se les hace llegar a estas 
-    las demandas de la comunidad en formato sencillo para que nos faciliten ofertas
+    3. (si eres premium) contactar por medio de la plataforma con las empresas con ofertas mas ventajosas para los distintos contratos y además se les hace llegar una petición 
+    formal con estas demandas y características de la comunidad en formato sencillo para que nos faciliten ofertas a la mayor brevedad
     
 * Mediante esta api, el usuario tipo 'comuner' va a ser capaz de:       
 
