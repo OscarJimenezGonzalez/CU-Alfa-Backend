@@ -36,12 +36,12 @@ DELETE | /community/own          | YES   | user  | Delete own user     |        
 DELETE | /community/:communityId | YES   | admin | Delete one user     |                                                 |  {message: 'Community deleted'}
 
 
-### Supplier_company Endpoints
+### Supplier_Company Endpoints
 
-METHOD | ENDPOINT                            | TOKEN | ROLE | DESCRIPTION          | POST PARAMS                                             | RETURNS
--------|-------------------------------------|-------|------|----------------------|---------------------------------------------------------|--------------------
-GET    | /supplierCompany/own                | YES   | user  | Get own supplierCompany     |                                                 |  {supplierCompany}
-GET    | /supplierCompany                    | YES   | admin | Get all supplierCompany     |                                                     |  [{supplierCompany}]
+METHOD | ENDPOINT                            | TOKEN | ROLE | DESCRIPTION          | POST PARAMS                                               | RETURNS
+-------|-------------------------------------|-------|------|-----------------------|----------------------------------------------------------|--------------------
+GET    | /supplierCompany/own                | YES   | user  | Get own supplierCompany     |                                                   |  {supplierCompany}
+GET    | /supplierCompany                    | YES   | admin | Get all supplierCompany     |                                                   |  [{supplierCompany}]
 GET    | /supplierCompany/:supplierCompanyId | YES   | admin | Get one supplierCompany       |                                                 |  {supplierCompany}
 POST   | /supplierCompany                    | YES   | admin | Create one supplierCompany    | `body`                                          |  {supplierCompany}
 PUT    | /supplierCompany/own                | YES   | user  | Update own supplierCompanyy   | `body`                                          |  {message: 'Own Supplier Company updated'}
@@ -50,30 +50,44 @@ DELETE | /supplierCompany/own                | YES   | user  | Delete own suppli
 DELETE | /supplierCompany/:supplierCompanyId | YES   | admin | Delete one usupplierCompany   |                                                 |  {message: 'Supplier Company deleted'}
 
 
-### Supplier_offer Endpoints
+### Community_Supplier_Contract Endpoints
 
-METHOD | ENDPOINT                            | TOKEN | ROLE  | DESCRIPTION                        | POST PARAMS                                             | RETURNS
--------|-------------------------------------|-------|-------|------------------------------------|---------------------------------------------------------|--------------------
-GET    | /supplierOffer/own/:supplierOfferId | YES   | user  | Get one of my own supplierOffers   |                                               |  {supplierOffer}
-GET    | /supplierOffer/own/all              | YES   | user  | Get all of own supplierOffers      |                                               |  [{supplierOffer}]
-GET    | /supplierOffer                      | YES   | admin | Get all supplierOffers             |                                                   |  [{supplierOffer}]
-GET    | /supplierOffer/:supplierOfferId     | YES   | admin | Get one supplierOffer              |                                                  |  {supplierOffer}
-POST   | /supplierOffer/own                  | YES   | user  | Create one supplierOffer           | `body`                                           |  {supplierOffer}
-POST   | /supplierOffer                      | YES   | admin | Create one supplierOffer           | `body`                                           |  {supplierOffer}
-PUT    | /supplierOffer/own/:supplierOfferId | YES   | user  | Update one of my own supplierOffers| `body`                                        |  {message: 'Own Supplier Offer updated'}
-PUT    | /supplierOffer/:supplierOfferId     | YES   | admin | Update one supplierOffer           | `body`                                           |  {message: 'Supplier Offer updated'}
-DELETE | /supplierOffer/own/:supplierOfferId | YES   | user  | Delete one of my own supplierOffers|                                              |  {message: 'Supplier Offer deleted'}
-DELETE | /supplierOffer/:supplierOfferId     | YES   | admin | Delete one supplierOffer           |                                                   |  {message: 'Supplier Offer deleted'}
+METHOD | ENDPOINT                                                  | TOKEN | ROLE  | DESCRIPTION                                                                     | POST PARAMS  | RETURNS
+-------|-----------------------------------------------------------|-------|-------|---------------------------------------------------------------------------------|--------------|--------------------
+GET    | /communitySupplierContract/own                            | YES   | user  | Get all own communitySupplierContracts                                          |              |  [{communitySupplierContract}]
+GET    | /communitySupplierContract                                | YES   | admin | Get all communitySupplierContract                                               |              |  [{communitySupplierContract}]
+GET    | /communitySupplierContract/:communitySupplierContract     | YES   | admin | Get one communitySupplierContract                                               |              |  {communitySupplierContract}
+POST   | /communitySupplierContract                                | YES   | admin | Create one communitySupplierContract (limit 1 per contract type per community)  | `body`       |  {communitySupplierContract}
+POST   | /communitySupplierContract                                | YES   | user  | Create own communitySupplierContract (limit 1 per contract type)                | `body`       |  {communitySupplierContract}
+PUT    | /communitySupplierContract/own/:communitySupplierContract | YES   | user  | Update own communitySupplierContract                                            | `body`       |  {message: 'Own CommunitySupplierContract updated'}
+PUT    | /communitySupplierContract/:communitySupplierContract     | YES   | admin | Update one communitySupplierContract                                            | `body`       |  {message: 'CommunitySupplierContract updated'}
+DELETE | /communitySupplierContract/own/:communitySupplierContract | YES   | user  | Delete own communitySupplierContract                                            |              |  {message: 'Own CommunitySupplierContract deleted'}
+DELETE | /communitySupplierContract/:communitySupplierContract     | YES   | admin | Delete one communitySupplierContract                                            |              |  {message: 'CommunitySupplierContract deleted'}
 
-### SupplierContract_type Endpoints
+
+### Supplier_Contract_type Endpoints
 
 METHOD | ENDPOINT                            | TOKEN | ROLE | DESCRIPTION          | POST PARAMS                                             | RETURNS
 -------|-------------------------------------|-------|------|----------------------|---------------------------------------------------------|--------------------
-GET    | /supplierContractType                         | YES   | admin | Get all supplierContractType       |                                                     |  [{supplierContractType}]
-GET    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Get one supplierContractType       |                                                 |  {supplierContractType}
-POST   | /supplierContractType                         | YES   | admin | Create one supplierContractType    | `body`                                          |  {supplierContractType}
-PUT    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Update one supplierContractType    | `body`                                          |  {message: 'SupplierContractType updated'}
-DELETE | /supplierContractType/:SupplierContractTypeId | YES   | admin | Delete one supplierContractType    |                                                 |  {message: 'SupplierContractType deleted'}
+GET    | /supplierContractType                         | YES   | admin | Get all supplierContractType       |                                |  [{supplierContractType}]
+GET    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Get one supplierContractType       |                                |  {supplierContractType}
+POST   | /supplierContractType                         | YES   | admin | Create one supplierContractType    | `body`                         |  {supplierContractType}
+PUT    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Update one supplierContractType    | `body`                         |  {message: 'SupplierContractType updated'}
+DELETE | /supplierContractType/:SupplierContractTypeId | YES   | admin | Delete one supplierContractType    |                                |  {message: 'SupplierContractType deleted'}
 
+### Supplier_offer Endpoints 
+
+METHOD | ENDPOINT                            | TOKEN | ROLE  | DESCRIPTION                                                  | POST PARAMS                                             | RETURNS
+-------|-------------------------------------|-------|-------|--------------------------------------------------------------|---------------------------------------------------------|--------------------
+GET    | /supplierOffer/own/:supplierOfferId | YES   | user  | Get one of my own supplierOffers                             |                                                         |  {supplierOffer}
+GET    | /supplierOffer/own/all              | YES   | user  | Get all of own supplierOffers                                |                                                         |  [{supplierOffer}]
+GET    | /supplierOffer                      | YES   | admin | Get all supplierOffers                                       |                                                         |  [{supplierOffer}]
+GET    | /supplierOffer/:supplierOfferId     | YES   | admin | Get one supplierOffer                                        |                                                         |  {supplierOffer}
+POST   | /supplierOffer/own                  | YES   | user  | Create one supplierOffer (solo user: 'supplier')             | `body`                                                  |  {supplierOffer}
+POST   | /supplierOffer                      | YES   | admin | Create one supplierOffer                                     | `body`                                                  |  {supplierOffer}
+PUT    | /supplierOffer/own/:supplierOfferId | YES   | user  | Update one of my own supplierOffers (solo user: 'supplier')  | `body`                                                  |  {message: 'Own Supplier Offer updated'}
+PUT    | /supplierOffer/:supplierOfferId     | YES   | admin | Update one supplierOffer                                     | `body`                                                  |  {message: 'Supplier Offer updated'}
+DELETE | /supplierOffer/own/:supplierOfferId | YES   | user  | Delete one of my own supplierOffers                          |                                                         |  {message: 'Supplier Offer deleted'}
+DELETE | /supplierOffer/:supplierOfferId     | YES   | admin | Delete one supplierOffer                                     |                                                         |  {message: 'Supplier Offer deleted'}
 
 
