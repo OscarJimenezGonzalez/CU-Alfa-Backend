@@ -32,9 +32,9 @@ GET    | /community/:communityId | YES   | admin | Get one Community    |       
 POST   | /community              | YES   | user  | Create own Community | `body`                                          |  {community}                  
 POST   | /community              | YES   | admin | Create one Community | `body`                                          |  {community}
 PUT    | /community/own          | YES   | user  | Update own Community | `body`                                          |  {message: 'Own Community updated'}
-PUT    | /community/:communityId | YES   | admin | Update one user      | `body`                                          |  {message: 'Community updated'
-DELETE | /community/own          | YES   | user  | Delete own user      |                                                 |  {message: 'Own Community deleted'}
-DELETE | /community/:communityId | YES   | admin | Delete one user      |                                                 |  {message: 'Community deleted'}
+PUT    | /community/:communityId | YES   | admin | Update one Community | `body`                                          |  {message: 'Community updated'
+DELETE | /community/own          | YES   | user  | Delete own Community |                                                 |  {message: 'Own Community deleted'}
+DELETE | /community/:communityId | YES   | admin | Delete one Community |                                                 |  {message: 'Community deleted'}
 
 
 ### Supplier_Company Endpoints
@@ -68,8 +68,8 @@ DELETE | /communitySupplierContract/:communitySupplierContract     | YES   | adm
 
 ### Supplier_Contract_type Endpoints
 
-METHOD | ENDPOINT                            | TOKEN | ROLE | DESCRIPTION          | POST PARAMS                                             | RETURNS
--------|-------------------------------------|-------|------|----------------------|---------------------------------------------------------|--------------------
+METHOD | ENDPOINT                                      | TOKEN | ROLE  | DESCRIPTION          | POST PARAMS                                             | RETURNS
+-------|-----------------------------------------------|-------|-------|----------------------|---------------------------------------------------------|--------------------
 GET    | /supplierContractType                         | YES   | admin | Get all supplierContractType       |                                |  [{supplierContractType}]
 GET    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Get one supplierContractType       |                                |  {supplierContractType}
 POST   | /supplierContractType                         | YES   | admin | Create one supplierContractType    | `body`                         |  {supplierContractType}
