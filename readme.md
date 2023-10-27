@@ -16,7 +16,8 @@ GET    | /user/own        | YES   | user  | Get Own Profile          |          
 GET    | /user/:userId    | YES   | user  | Get One User             |                                                 | {user}
 POST   | /user            | YES   | admin | Create one user          | `body`                                          | {user}
 PUT    | /user/own        | YES   | user  | Update own profile       | `body`                                          | {message: 'Profile updated'}
-PUT    | /user/password   | YES   | user  | Reset password           | `newPassword` `repeatPassword`                  | { message: 'Password updated }
+PUT    | /user/:usedId/password| YES   | admin | Reset password           | `newPassword` `repeatPassword`                  | { message: 'Password updated }
+PUT    | /user/ownPassword| YES   | user  | Reset password           | `newPassword` `repeatPassword`                  | { message: 'Password updated }
 PUT    | /user/:userId    | YES   | admin | Update one user          | `body`                                          | {message: 'User updated'
 DELETE | /user/:userId    | YES   | admin | Delete one user          |                                                 | {message: 'User deleted'}
 DELETE | /user/own        | YES   | user  | Delete own profile       |                                                 | { message: 'Profile deleted' }
