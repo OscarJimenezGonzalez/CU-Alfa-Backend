@@ -22,4 +22,6 @@ Cada comunidad que se registra en nuestra web, tiene contratos para los 5 servio
     3. (si eres usuario premium) ofertar (por medio de la aplicación) a aquellas comunidades cuyos contratos no estén en el top 10 del ranking de mejore precios de contratos, en base a la información técnica de licitación y características de    
     dichas comunidades.   
 
+https://dbdiagram.io/d/ComoU-Alfa-65365e17ffbf5169f041e0f4
+
    
