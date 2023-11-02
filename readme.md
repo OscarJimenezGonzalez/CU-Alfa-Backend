@@ -27,14 +27,14 @@ DELETE | /user/own        | YES   | user  | Delete own profile       |          
 
 METHOD | ENDPOINT                | TOKEN | ROLE | DESCRIPTION           | POST PARAMS                                     | RETURNS
 -------|-------------------------|-------|------|-----------------------|-------------------------------------------------|--------------------
-GET    | /community/own          | YES   | user  | Get own Community    |                                                 |  {community}
+GET    | /community/own/:communityId | YES   | user  | Get own Communities  |                                                 |  {community}
 GET    | /community              | YES   | admin | Get all Communities  |                                                 |  [{community}]
 GET    | /community/:communityId | YES   | admin | Get one Community    |                                                 |  {community}
 POST   | /community              | YES   | user  | Create own Community | `body`                                          |  {community}                  
 POST   | /community              | YES   | admin | Create one Community | `body`                                          |  {community}
 PUT    | /community/own          | YES   | user  | Update own Community | `body`                                          |  {message: 'Own Community updated'}
 PUT    | /community/:communityId | YES   | admin | Update one Community | `body`                                          |  {message: 'Community updated'
-DELETE | /community/own          | YES   | user  | Delete own Community |                                                 |  {message: 'Own Community deleted'}
+DELETE | /community/own/:communityId | YES   | user  | Delete own Community |                                                 |  {message: 'Own Community deleted'}
 DELETE | /community/:communityId | YES   | admin | Delete one Community |                                                 |  {message: 'Community deleted'}
 
 

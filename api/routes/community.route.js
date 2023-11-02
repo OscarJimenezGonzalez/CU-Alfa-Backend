@@ -1,11 +1,27 @@
 const router = require('express').Router()
-const {createOwnCommunity, createOneCommunity, getAllCommunities} = require('../controllers/community.controller')
-const {checkAdmin} = require('../utils/authorization.utils')
+const { getAllCommunities,
+    getOneCommunity,
+    getOwnCommunities,
+    createOwnCommunity,
+    createOneCommunity,
+    updateOneCommunity,
+    updateOwnCommunities,
+    deleteOneCommunity,
+    deleteOwnCommunities, 
+    } = require('../controllers/community.controller')
 
-router.get('/own', getAllCommunities)
+const { checkAdmin } = require('../utils/authorization.utils')
+
+router.get('/own', getOwnCommunities)
+router.get('/:communityId', checkAdmin, getOneCommunity)
 router.get('/', checkAdmin, getAllCommunities)
+router.put('/own/:communityId', updateOwnCommunities)  
+router.put('/:communityId', checkAdmin, updateOneCommunity)
 router.post('/own', createOwnCommunity)
 router.post('/', checkAdmin, createOneCommunity)
+router.delete('/own/:communityId', deleteOwnCommunities)
+router.delete('/:communityId', checkAdmin, deleteOneCommunity)
+
 
 
 module.exports = router; 
