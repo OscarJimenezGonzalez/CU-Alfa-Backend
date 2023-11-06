@@ -13,7 +13,6 @@ METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION               | POST PARA
 -------|------------------|-------|------|---------------------------|-------------------------------------------------|--------------------
 GET    | /user            | YES   | admin | Get All Users            | `query params`                                  | [{user}]
 GET    | /user/own        | YES   | user  | Get Own Profile          |                                                 | {user}
-GET    | /user/:userId    | YES   | user  | Get One User             |                                                 | {user}
 POST   | /user            | YES   | admin | Create one user          | `body`                                          | {user}
 PUT    | /user/own        | YES   | user  | Update own profile       | `body`                                          | {message: 'Profile updated'}
 PUT    | /user/:usedId/password| YES   | admin | Reset password           | `newPassword` `repeatPassword`                  | { message: 'Password updated }
@@ -29,7 +28,6 @@ METHOD | ENDPOINT                | TOKEN | ROLE | DESCRIPTION           | POST P
 -------|-------------------------|-------|------|-----------------------|-------------------------------------------------|--------------------
 GET    | /community/own/:communityId | YES   | user  | Get own Communities  |                                                 |  {community}
 GET    | /community              | YES   | admin | Get all Communities  |                                                 |  [{community}]
-GET    | /community/:communityId | YES   | admin | Get one Community    |                                                 |  {community}
 POST   | /community              | YES   | user  | Create own Community | `body`                                          |  {community}                  
 POST   | /community              | YES   | admin | Create one Community | `body`                                          |  {community}
 PUT    | /community/own          | YES   | user  | Update own Community | `body`                                          |  {message: 'Own Community updated'}
@@ -44,7 +42,6 @@ METHOD | ENDPOINT                            | TOKEN | ROLE | DESCRIPTION       
 -------|-------------------------------------|-------|------|-----------------------|----------------------------------------------------------|--------------------
 GET    | /supplierCompany/own                | YES   | user  | Get own supplierCompany     |                                                   |  {supplierCompany}
 GET    | /supplierCompany                    | YES   | admin | Get all supplierCompany     |                                                   |  [{supplierCompany}]
-GET    | /supplierCompany/:supplierCompanyId | YES   | admin | Get one supplierCompany       |                                                 |  {supplierCompany}
 POST   | /supplierCompany                    | YES   | admin | Create one supplierCompany    | `body`                                          |  {supplierCompany}
 PUT    | /supplierCompany/own                | YES   | user  | Update own supplierCompanyy   | `body`                                          |  {message: 'Own Supplier Company updated'}
 PUT    | /supplierCompany/:supplierCompanyId | YES   | admin | Update one supplierCompany    | `body`                                          |  {message: 'Supplier Company updated'}
@@ -58,7 +55,6 @@ METHOD | ENDPOINT                                                  | TOKEN | ROL
 -------|-----------------------------------------------------------|-------|-------|---------------------------------------------------------------------------------|--------------|--------------------
 GET    | /communitySupplierContract/own                            | YES   | user  | Get all own communitySupplierContracts                                          |              |  [{communitySupplierContract}]
 GET    | /communitySupplierContract                                | YES   | admin | Get all communitySupplierContract                                               |              |  [{communitySupplierContract}]
-GET    | /communitySupplierContract/:communitySupplierContract     | YES   | admin | Get one communitySupplierContract                                               |              |  {communitySupplierContract}
 POST   | /communitySupplierContract                                | YES   | admin | Create one communitySupplierContract (limit 1 per contract type per community)  | `body`       |  {communitySupplierContract}
 POST   | /communitySupplierContract                                | YES   | user  | Create own communitySupplierContract (limit 1 per contract type)                | `body`       |  {communitySupplierContract}
 PUT    | /communitySupplierContract/own/:communitySupplierContract | YES   | user  | Update own communitySupplierContract                                            | `body`       |  {message: 'Own CommunitySupplierContract updated'}
@@ -72,7 +68,6 @@ DELETE | /communitySupplierContract/:communitySupplierContract     | YES   | adm
 METHOD | ENDPOINT                                      | TOKEN | ROLE  | DESCRIPTION          | POST PARAMS                                             | RETURNS
 -------|-----------------------------------------------|-------|-------|----------------------|---------------------------------------------------------|--------------------
 GET    | /supplierContractType                         | YES   | admin | Get all supplierContractType       |                                |  [{supplierContractType}]
-GET    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Get one supplierContractType       |                                |  {supplierContractType}
 POST   | /supplierContractType                         | YES   | admin | Create one supplierContractType    | `body`                         |  {supplierContractType}
 PUT    | /supplierContractType/:SupplierContractTypeId | YES   | admin | Update one supplierContractType    | `body`                         |  {message: 'SupplierContractType updated'}
 DELETE | /supplierContractType/:SupplierContractTypeId | YES   | admin | Delete one supplierContractType    |                                |  {message: 'SupplierContractType deleted'}
@@ -84,7 +79,6 @@ METHOD | ENDPOINT                            | TOKEN | ROLE  | DESCRIPTION      
 GET    | /supplierOffer/own/:supplierOfferId | YES   | user  | Get one of my own supplierOffers                             |                                                         |  {supplierOffer}
 GET    | /supplierOffer/own/all              | YES   | user  | Get all of own supplierOffers                                |                                                         |  [{supplierOffer}]
 GET    | /supplierOffer                      | YES   | admin | Get all supplierOffers                                       |                                                         |  [{supplierOffer}]
-GET    | /supplierOffer/:supplierOfferId     | YES   | admin | Get one supplierOffer                                        |                                                         |  {supplierOffer}
 POST   | /supplierOffer/own                  | YES   | user  | Create one supplierOffer (solo user: 'supplier')             | `body`                                                  |  {supplierOffer}
 POST   | /supplierOffer                      | YES   | admin | Create one supplierOffer                                     | `body`                                                  |  {supplierOffer}
 PUT    | /supplierOffer/own/:supplierOfferId | YES   | user  | Update one of my own supplierOffers (solo user: 'supplier')  | `body`                                                  |  {message: 'Own Supplier Offer updated'}

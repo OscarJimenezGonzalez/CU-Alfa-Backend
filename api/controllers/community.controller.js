@@ -3,9 +3,13 @@ const User = require('../models/user.model')
 
 
 const getAllCommunities = async (req, res) => {
+    ///// req.query -->  le puedes hacer todas las peticiones que quieras
+    //// por ejemplo:   http://localhost:3000/api/community?location=Telde
+    ////                http://localhost:3000/api/community/3
+    ////                http://localhost:3000/api/community?zip_code=35011  ...etc
 
     try {
-        const communities = await Community.findAll()
+        const communities = await Community.findAll({ where: req.query })
         return res.status(200).json(communities)
 
     } catch (error) {
@@ -16,33 +20,6 @@ const getAllCommunities = async (req, res) => {
 
 }
 
-const getOneCommunity = async (req, res) => {
-
-    try {
-        const community = await Community.findByPk(req.params.communityId)
-
-        if (community) {
-
-            return res.status(200).json(community)
-
-        }
-
-        else {
-
-            return res.status(404).json('Community not found')
-
-        }
-
-
-    } catch (error) {
-
-        return res.status(500).json({ message: error.message })
-
-    }
-
-
-
-}
 
 const getOwnCommunities = async (req, res) => {
 
@@ -130,7 +107,7 @@ const updateOneCommunity = async (req, res) => {
             where: { id: req.params.communityId }
         })
 
-        if (community) {
+        if (community > 0) {
 
             return res.status(200).json('Community updated.')
         }
@@ -246,4 +223,4 @@ const deleteOwnCommunities = async (req, res) => {
 }
 
 
-module.exports = { getAllCommunities, getOwnCommunities, getOneCommunity, createOwnCommunity, createOneCommunity, updateOneCommunity, updateOwnCommunities, deleteOneCommunity, deleteOwnCommunities, } // metodos 
+module.exports = { getAllCommunities, getOwnCommunities, createOwnCommunity, createOneCommunity, updateOneCommunity, updateOwnCommunities, deleteOneCommunity, deleteOwnCommunities, } // metodos 

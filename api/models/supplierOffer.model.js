@@ -3,20 +3,30 @@ const { connection } = require('../../database/index')
 
 const SupplierOffer = connection.define('Supplier_Offer', {
 
-    quantiy_offered: {
+    quantity_offered: {
 
         type: DataTypes.DOUBLE,
         notNull: true,
 
     },
 
+    offered: {
+
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+
+    },
+
     hired: {
 
         type: DataTypes.BOOLEAN,
-        notNull: true
+        defaultValue: false
+
     }
 
-
 })
+
+
+
 
 module.exports = SupplierOffer; 

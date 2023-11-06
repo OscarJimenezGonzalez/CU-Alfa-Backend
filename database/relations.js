@@ -11,7 +11,7 @@ function addRelationsToModels () {
         User.belongsToMany(Community, {through: 'user_community'})
         Community.belongsToMany(User,{through: 'user_community'})
         
-        User.hasOne(SupplierCompany)
+        User.hasMany(SupplierCompany)
         SupplierCompany.belongsTo(User)
 
         SupplierCompany.hasMany(CommunitySupplierContract)
@@ -22,6 +22,9 @@ function addRelationsToModels () {
 
         SupplierContractType.hasMany(CommunitySupplierContract)
         CommunitySupplierContract.belongsTo(SupplierContractType)
+
+        SupplierContractType.hasMany(SupplierOffer)
+        SupplierOffer.belongsTo(SupplierContractType)
 
         SupplierCompany.hasMany(SupplierOffer)
         SupplierOffer.belongsTo(SupplierCompany)

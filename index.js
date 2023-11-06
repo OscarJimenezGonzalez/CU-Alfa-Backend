@@ -4,7 +4,6 @@ const morgan = require('morgan')
 const addRelationsToModels = require('./database/relations')
 const { checkConnection, syncModels } = require("./database/index")
 
-
 async function checkDB() {
     await checkConnection()
     addRelationsToModels()

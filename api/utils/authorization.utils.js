@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const User = require('../models/user.model')
 
-const checkAuthorization = async (req, res, next) => {
+const checkAuthentication = async (req, res, next) => {
 
     if (!req.headers.authorization) {
         return res.status(401).send('Token not found')
@@ -36,6 +36,6 @@ const checkAdmin = (req, res, next) => {
 }
 
 module.exports = {
-    checkAuthorization,
+    checkAuthentication,
     checkAdmin
 }

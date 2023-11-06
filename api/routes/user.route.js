@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const {
     getAllUsers,
-    getOneUser,
     getOwnProfile,
     createUser,
     updateUser,
@@ -15,7 +14,6 @@ const {
 const {checkAdmin} = require('../utils/authorization.utils')
 
 router.get('/own/profile', getOwnProfile)
-router.get('/:userId', checkAdmin, getOneUser)
 router.get('/', checkAdmin, getAllUsers)
 router.post('/', checkAdmin, createUser)
 router.put('/own/profile', updateOwnProfile)

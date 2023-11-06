@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const { getAllCommunities,
-    getOneCommunity,
     getOwnCommunities,
     createOwnCommunity,
     createOneCommunity,
@@ -13,7 +12,6 @@ const { getAllCommunities,
 const { checkAdmin } = require('../utils/authorization.utils')
 
 router.get('/own', getOwnCommunities)
-router.get('/:communityId', checkAdmin, getOneCommunity)
 router.get('/', checkAdmin, getAllCommunities)
 router.put('/own/:communityId', updateOwnCommunities)  
 router.put('/:communityId', checkAdmin, updateOneCommunity)

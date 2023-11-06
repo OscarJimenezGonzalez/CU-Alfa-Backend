@@ -14,19 +14,6 @@ const getAllUsers = async (req, res) => {
     }
 }
 
-const getOneUser = async (req, res) => {
-    try {
-        const user = await User.findByPk(req.params.userId)
-        if (user) {
-            return res.status(200).json(user)
-        } else {
-            return res.status(404).send("User not found")
-        }
-    } catch (error) {
-        res.status(500).json({ message: error.message })
-    }
-}
-
 const getOwnProfile = async (req, res) => {
     try {
         const user = await User.findByPk(res.locals.user.id, {
@@ -69,7 +56,7 @@ const updateUser = async (req, res) => {
                 id: req.params.userId
             }
         })
-        if (user) {
+        if (user > 0) {
             return res.status(200).json({ message: "user updated" })
         } else {
             return res.status(404).send("User not found")
@@ -158,7 +145,6 @@ const deleteOwnProfile = async (req, res) => {
 
 module.exports = {
     getAllUsers,
-    getOneUser,
     getOwnProfile,
     createUser,
     updateUser,
