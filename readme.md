@@ -1,4 +1,4 @@
-![database](assets/photos/ComoU - Alfa (1).png)
+![database](https://github.com/OscarJimenezGonzalez/CU-Alfa-Backend/blob/e7954cae8d4aa7308523cc318342563a55fdb0cf/assets/photos/ComoU%20-%20Alfa%20(1).png)
 
 
 ### User Signup/Login
